@@ -4,7 +4,7 @@ from sklearn.preprocessing import LabelEncoder
 import joblib
 import os
 
-def data_preprocessing(csv_path: str, save_path: str = "data/processed/"):
+def data_preprocessing(csv_path: str, save_path: str):
     """
     Membaca file CSV, melakukan preprocessing (Label Encoding),
     dan menyimpan hasil data train/test ke dalam file terpisah.
@@ -48,8 +48,8 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Preprocessing otomatis dataset mushroom.")
-    parser.add_argument("--input", type=str, default="namadataset_raw/mushrooms.csv", help="Path file CSV mentah")
-    parser.add_argument("--output", type=str, default="preprocessing/namadataset_preprocessing", help="Folder hasil preprocessing")
+    parser.add_argument("--input", type=str, default="mushrooms_raw.csv", help="Path file CSV mentah")
+    parser.add_argument("--output", type=str, default="preprocessing/mushrooms_preprocessing", help="Folder hasil preprocessing")
     args = parser.parse_args()
 
     data_preprocessing(args.input, args.output)
